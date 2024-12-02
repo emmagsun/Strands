@@ -5,8 +5,9 @@ from nltk.corpus import wordnet
 import nltk
 import time
 from itertools import product
+import marisa_trie
 
-# kai wuz here
+
 def load_dictionary() -> Set[str]:
     """Load dictionary using WordNet"""
     try:
@@ -22,7 +23,11 @@ def load_dictionary() -> Set[str]:
         word = word.upper()
         if len(word) >= 4 and word.isalpha():  # Only pure letters, no hyphens etc
             words.add(word)
-    return words
+    #
+    trie = marisa_trie.Trie(words)
+    return trie
+    # return words
+
 
 
 # class WordChecker:
@@ -150,7 +155,7 @@ def main():
     dictionary = load_dictionary()
     print(f"Loaded {len(dictionary)} words from WordNet")
 
-    solver = StrandsSearch(dictionary, min_word_length=4, heuristic_type='semantic')
+    solver = StrandsSearch(dictionary, min_word_length=4, heuristic_type='basic')
     checker = WordChecker(target_words, total_start_time)
     # checker = WordChecker(target_words, total_start_time)
     # solver = StrandsSearch(dictionary, min_word_length=4)
@@ -168,7 +173,7 @@ def main():
         all_positions = list(product(range(height), range(width)))
         # Randomize positions each iteration to try different paths
         import random
-        random.shuffle(all_positions)
+        # random.shuffle(all_positions)
 
         for pos in all_positions:
             if time.time() - total_start_time > max_total_time:

@@ -27,8 +27,10 @@ class BasicHeuristic(BaseHeuristic):
             return float('inf')
 
         # Count how many dictionary words start with this prefix
-        potential_words = sum(1 for dict_word in dictionary
-                            if dict_word.startswith(word))
+
+        potential_words = len(dictionary.keys(word))
+        # potential_words = sum(1 for dict_word in dictionary
+        #                     if dict_word.startswith(word))
 
         if potential_words == 0:
             return float('inf')  # No words possible, prune this path

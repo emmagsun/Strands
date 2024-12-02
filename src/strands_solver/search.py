@@ -197,7 +197,7 @@ class StrandsSearch:
 
             if self.is_valid_word(current_word):
                 # Set current path on the checker object
-                checker.current_path = current.state.current_path
+                # checker.current_path = current.state.current_path
                 if checker.is_correct_word(current_word):
                     found_words.add(current_word)
 
