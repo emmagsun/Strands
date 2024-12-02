@@ -38,52 +38,29 @@ class StrandsState:
     def get_current_word(self) -> str:
         return ''.join(self.grid[r][c] for r, c in self.current_path)
 
-    def get_neighbors(self, pos: Tuple[int, int], excluded_positions: Set[Tuple[int, int]] = None) -> List[
+    def get_neighbors(self, pos: Tuple[int, int], excluded_positions: Set[Tuple[int, int]], dictionary) -> List[
         Tuple[int, int]]:
         if excluded_positions is None:
             excluded_positions = set()
 
         row, col = pos
         neighbors = []
+        current_word = self.get_current_word()
+
         for dr, dc in [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]:
             new_row, new_col = row + dr, col + dc
             if (0 <= new_row < len(self.grid) and
                     0 <= new_col < len(self.grid[0]) and
                     (new_row, new_col) not in self.used_positions and
                     (new_row, new_col) not in excluded_positions):
-                neighbors.append((new_row, new_col))
+
+                # Check if adding this letter forms a valid prefix
+                potential_word = current_word + self.grid[new_row][new_col]
+                # Use trie's prefixes method to check if this could form a word
+                if dictionary.keys(potential_word):  # This returns an iterator of words with this prefix
+                    neighbors.append((new_row, new_col))
+
         return neighbors
-
-
-# class BasicHeuristic:
-#     def calculate(self, word: str, dictionary: Set[str], found_words: Set[str]) -> float:
-#         if len(word) > 8:
-#             return float('inf')
-#
-#         potential_words = sum(1 for dict_word in dictionary if dict_word.startswith(word))
-#
-#         if potential_words == 0:
-#             return float('inf')
-#
-#         if len(word) < 4:
-#             return 1000
-#
-#         if word in dictionary:
-#             if 4 <= len(word) <= 8:
-#                 return -len(word) * 2
-#             return 0
-#
-#         if len(word) > 6 and word not in dictionary:
-#             return 500
-#
-#         return -potential_words / len(word)
-#
-#
-# HEURISTICS = {
-#     'basic': BasicHeuristic,
-#     # Add other heuristics here if needed
-# }
-
 
 class StrandsSearch:
     def __init__(self, dictionary: Set[str], min_word_length: int = 4, heuristic_type: str = 'basic'):
@@ -141,7 +118,7 @@ class StrandsSearch:
 
             if not timeout_checker():
                 current_pos = current.state.current_path[-1]
-                for next_pos in current.state.get_neighbors(current_pos, excluded_positions):
+                for next_pos in current.state.get_neighbors(current_pos, excluded_positions, self.dictionary):
                     new_state = StrandsState(grid)
                     new_state.current_path = current.state.current_path.copy()
                     new_state.used_positions = current.state.used_positions.copy()
