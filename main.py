@@ -1,5 +1,5 @@
 from strands_solver.grid import StrandsState
-from strands_solver.search import StrandsSearch
+from strands_solver.search import StrandsSearch, StrandsGroupSearch
 from typing import Set
 from nltk.corpus import wordnet
 import nltk
@@ -81,6 +81,144 @@ def main():
     print(f"Missing words: {target_words - found_words}")
     print(f"Total words found: {len(found_words)}/{len(target_words)}")
     print(f"Total time elapsed: {total_time:.2f} seconds")
+
+
+# if __name__ == "__main__":
+#     main()
+
+
+def main2():
+    grid = [
+        ['H', 'U', 'A', 'N', 'R', 'K'],
+        ['L', 'A', 'M', 'M', 'E', 'A'],
+        ['S', 'T', 'D', 'P', 'E', 'T'],
+        ['O', 'R', 'C', 'E', 'I', 'B'],
+        ['K', 'I', 'G', 'H', 'O', 'O'],
+        ['N', 'A', 'N', 'A', 'R', 'I'],
+        ['I', 'O', 'A', 'N', 'G', 'B'],
+        ['L', 'G', 'N', 'P', 'O', 'B']
+    ]
+
+    target_words = {"HUMAN", "MEERKAT", "BIPEDAL", "OSTRICH", "KANGAROO", "PANGOLIN", "GIBBON"}
+    required_word_count = len(target_words)
+
+    print("\nSolving for grid:")
+    for row in grid:
+        print(' '.join(row))
+
+    print(f"\nLooking for {required_word_count} words that don't share positions\n")
+
+    dictionary = load_dictionary()
+    print(f"Loaded {len(dictionary)} words from WordNet")
+
+    solver = StrandsGroupSearch(dictionary, required_word_count)
+    start_time = time.time()
+
+    groups = solver.find_word_groups(grid)
+
+    total_time = time.time() - start_time
+    print("\nSearch complete!")
+    print(f"Found {len(groups)} potential groups of {required_word_count} words")
+
+    for i, group in enumerate(groups):
+        print(f"\nGroup {i + 1}:")
+        for word, path in zip(group.words, group.paths):
+            path_str = ' -> '.join(f"({r},{c})" for r, c in path)
+            print(f"{word}: {path_str}")
+
+    print(f"\nTotal time elapsed: {total_time:.2f} seconds")
+
+
+    # if __name__ == "__main__":
+    #     main2()
+
+def main():
+    total_start_time = time.time()
+
+    # Example grid
+    grid = [
+        ['H', 'U', 'A', 'N', 'R', 'K'],
+        ['L', 'A', 'M', 'M', 'E', 'A'],
+        ['S', 'T', 'D', 'P', 'E', 'T'],
+        ['O', 'R', 'C', 'E', 'I', 'B'],
+        ['K', 'I', 'G', 'H', 'O', 'O'],
+        ['N', 'A', 'N', 'A', 'R', 'I'],
+        ['I', 'O', 'A', 'N', 'G', 'B'],
+        ['L', 'G', 'N', 'P', 'O', 'B']
+    ]
+
+    # Target words - these are only used for semantic guidance, not validation
+    target_words = {"HUMAN", "MEERKAT", "BIPEDAL", "OSTRICH", "KANGAROO", "PANGOLIN", "GIBBON"}
+    hint_words = {"BIPEDAL"}
+
+    # Print problem setup
+    print("\nStrands Word Group Solver")
+    print("=" * 50)
+    print("\nGrid:")
+    for row in grid:
+        print(' '.join(row))
+
+    print(f"\nLooking for {len(target_words)} non-overlapping words")
+    print(f"Using target words for semantic guidance: {sorted(target_words)}")
+
+    # Load dictionary
+    print("\nInitializing solver...")
+    print("Loading dictionary...")
+    dictionary = load_dictionary()
+    print(f"Loaded {len(dictionary)} words from WordNet")
+
+    # Create solver
+    solver = StrandsGroupSearch(
+        dictionary=dictionary,
+        target_words=target_words,
+        hint_words=hint_words,
+        min_word_length=4
+    )
+
+    # Set search parameters
+    max_search_time = 300  # 5 minutes
+    max_solutions = 5
+
+    print(f"\nSearch parameters:")
+    print(f"- Maximum search time: {max_search_time} seconds")
+    print(f"- Maximum solutions to find: {max_solutions}")
+    print(f"- Minimum word length: {solver.min_word_length}")
+
+    # Run search
+    print("\nStarting search...")
+    groups = solver.find_word_groups(
+        grid=grid,
+        max_time=max_search_time
+    )
+
+    # Print results
+    total_time = time.time() - total_start_time
+    print("\nSearch complete!")
+    print("=" * 50)
+    print(f"Found {len(groups)} potential groups in {total_time:.2f} seconds")
+
+    # Print top solutions
+    for i, group in enumerate(groups[:max_solutions]):
+        print(f"\nSolution {i + 1}:")
+        print("-" * 20)
+        group_score = solver.heuristic.calculate_group_score(group)
+        print(f"Score: {group_score:.3f}")
+
+        for word, path in zip(group.words, group.paths):
+            path_str = ' -> '.join(f"({r},{c})" for r, c in path)
+            print(f"{word:10} : {path_str}")
+
+    # Print statistics
+    if not groups:
+        print("\nNo valid solutions found.")
+    else:
+        print("\nStatistics:")
+        print("-" * 20)
+        print(f"Total solutions found: {len(groups)}")
+        print(f"Average words per group: {sum(len(g.words) for g in groups) / len(groups):.1f}")
+        print(f"Average score: {sum(g.score for g in groups) / len(groups):.3f}")
+
+    print(f"\nTotal time elapsed: {total_time:.2f} seconds")
 
 
 if __name__ == "__main__":
