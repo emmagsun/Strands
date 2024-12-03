@@ -59,8 +59,57 @@ PUZZLE_CONFIGS = {
         ],
         "target_words": {"LAUGH", "CHORTLE", "GUFFAW", "ROAR", "TITTER", "CHUCKLE", "HOOT"},
         "hint_words": {"HILARIOUS"}
-}
-
-
+    },
+    # Audrey - May
+    "In a good workout": {
+        "grid": [
+            ['I', 'T', 'P', 'I', 'L', 'L'],
+            ['C', 'A', 'I', 'E', 'W', 'E'],
+            ['S', 'L', 'G', 'H', 'T', 'F'],
+            ['R', 'S', 'E', 'S', 'I', 'T'],
+            ['O', 'W', 'N', 'T', 'E', 'R'],
+            ['E', 'R', 'I', 'M', 'D', 'A'],
+            ['L', 'L', 'B', 'C', 'A', 'B'],
+            ['E', 'K', 'I', 'S', 'E', 'L']
+        ],
+        "target_words": {"TREADMILL", "ELLIPTICAL", "ROWER", "WEIGHTS", "BIKE", "CABLES"},
+        "hint_words": {"FITNESS"}
+    },
+    "Birdsong": {
+        "grid": [
+        ["E", "C", "E", "E", "T", "I"],
+        ["E", "H", "W", "W", "H", "S"],
+        ["R", "T", "S", "O", "L", "T"],
+        ["C", "S", "D", "C", "N", "E"],
+        ["B", "I", "R", "L", "U", "G"],
+        ["P", "A", "R", "T", "C", "K"],
+        ["R", "W", "C", "B", "R", "L"],
+        ["I", "H", "E", "L", "I", "L"]
+        ],
+        "target_words": {
+            "WARBLE", "CLUCK", "CHIRP", "TWEET", "WHISTLE", "TRILL", "SCREECH"
+        },
+        "hint_words": {
+            "BIRDSONG"
+        }
+    },
+    "Sounds delicious!": {
+        "grid": [
+        ["T", "E", "P", "H", "L", "A"],
+        ["E", "M", "A", "O", "I", "C"],
+        ["R", "I", "O", "M", "H", "R"],
+        ["K", "L", "P", "E", "S", "I"],
+        ["S", "A", "E", "H", "L", "S"],
+        ["E", "O", "N", "O", "L", "T"],
+        ["I", "T", "O", "E", "Y", "A"],
+        ["M", "E", "M", "S", "E", "K"]
+        ],
+        "target_words": {
+            "SERIAL", "CHILLY", "MEET", "STAKE", "PAIR", "TIME", "MOOSE", "LEAK"
+        },
+        "hint_words": {
+            "HOMOPHONES"
+        }
+    },
 
 }
