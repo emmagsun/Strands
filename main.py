@@ -92,7 +92,7 @@ def main():
         print(f"- {puzzle_name}")
 
     # You can either solve specific puzzles or all of them
-    puzzles_to_solve = ["In my kingdom"]  # Modify this list to solve specific puzzles
+    puzzles_to_solve = ["Strategy game"]  # Modify this list to solve specific puzzles
     # puzzles_to_solve = PUZZLE_CONFIGS.keys()  # Uncomment to solve all puzzles
 
     total_start_time = time.time()
