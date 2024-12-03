@@ -59,8 +59,22 @@ PUZZLE_CONFIGS = {
         ],
         "target_words": {"LAUGH", "CHORTLE", "GUFFAW", "ROAR", "TITTER", "CHUCKLE", "HOOT"},
         "hint_words": {"HILARIOUS"}
-}
+},
 
+    "Picture this": {
+        "grid": [
+            ['A', 'T', 'R', 'I', 'O', 'D'],
+            ['R', 'E', 'M', 'P', 'E', 'R'],
+            ['P', 'O', 'A', 'C', 'T', 'Y'],
+            ['T', 'H', 'T', 'L', 'H', 'L'],
+            ['I', 'M', 'O', 'I', 'P', 'E'],
+            ['E', 'G', 'F', 'A', 'N', 'S'],
+            ['R', 'I', 'R', 'H', 'A', 'L'],
+            ['L', 'G', 'H', 'T', 'S', 'F']
+        ],
+        "target_words": {"FILTER", "LENS", "CAMERA", "FLASH", "TRIPOD", "TIMER", "LIGHT"},
+        "hint_words": {"PHOTOGRAPHY"}
+}
 
 
 }
