@@ -320,7 +320,52 @@ PUZZLE_CONFIGS = {
     ],
     "target_words": {"SRIRACHA", "TZATZIKI", "KETCHUP", "AIOLI", "MUSTARD", "MAYO"},
     "hint_words": {"CONDIMENT"}
+},
+"Call me?": {
+    "grid": [
+        ['E', 'E', 'D', 'R', 'O', 'T'],
+        ['V', 'E', 'R', 'N', 'A', 'L'],
+        ['C', 'A', 'M', 'I', 'R', 'O'],
+        ['R', 'E', 'D', 'T', 'D', 'T'],
+        ['S', 'R', 'L', 'P', 'I', 'F'],
+        ['Q', 'O', 'T', 'R', 'O', 'E'],
+        ['U', 'E', 'A', 'N', 'R', 'S'],
+        ['N', 'E', 'S', 'E', 'O', 'S']
+    ],
+    "target_words": {"PROFESSOR", "DOCTOR", "QUEEN", "REVEREND", "SENATOR", "ADMIRAL"},
+    "hint_words": {"TITLES"}
+},
+"Staff members": {
+    "grid": [
+        ['S', 'I', 'G', 'E', 'N', 'T'],
+        ['A', 'N', 'R', 'S', 'O', 'A'],
+        ['T', 'M', 'T', 'I', 'F', 'L'],
+        ['R', 'U', 'E', 'T', 'C', 'L'],
+        ['E', 'A', 'E', 'A', 'E', 'N'],
+        ['P', 'S', 'R', 'T', 'F', 'A'],
+        ['R', 'A', 'U', 'O', 'A', 'T'],
+        ['S', 'H', 'N', 'L', 'R', 'U']
+    ],
+    "target_words": {"SHARP", "FLAT", "NATURAL", "CLEF", "SIGNATURE", "REST", "MEASURE"},
+    "hint_words": {"NOTATION"}
+},
+"As easy as pie": {
+    "grid": [
+        ['A', 'V', 'A', 'R', 'S', 'P'],
+        ['N', 'G', 'S', 'N', 'T', 'E'],
+        ['I', 'U', 'E', 'I', 'C', 'R'],
+        ['L', 'L', 'E', 'D', 'A', 'E'],
+        ['R', 'A', 'S', 'R', 'N', 'T'],
+        ['U', 'A', 'G', 'S', 'T', 'U'],
+        ['O', 'F', 'L', 'N', 'Y', 'B'],
+        ['L', 'T', 'I', 'P', 'U', 'R']
+    ],
+    "target_words": {"BUTTER", "SALT", "SYRUP", "PECAN", "FLOUR", "VANILLA", "SUGAR"},
+    "hint_words": {"INGREDIENTS"}
 }
+
+
+
 
 
 
