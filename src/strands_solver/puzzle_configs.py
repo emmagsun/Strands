@@ -44,7 +44,23 @@ PUZZLE_CONFIGS = {
         "target_words": {"BISHOP", "BOARD", "KING", "KNIGHT", "PAWN", "QUEEN", "ROOK", "TIMER", "CHECKMATE"},
         "hint_words": set("CHECKMATE")
 
-    }
+    },
+    
+    "What's so funny?": {
+        "grid": [
+            ['E', 'L', 'T', 'I', 'T', 'G'],
+            ['K', 'W', 'R', 'E', 'T', 'U'],
+            ['H', 'C', 'A', 'F', 'F', 'S'],
+            ['R', 'I', 'U', 'H', 'U', 'L'],
+            ['R', 'O', 'A', 'R', 'A', 'O'],
+            ['T', 'T', 'O', 'R', 'O', 'H'],
+            ['C', 'H', 'U', 'C', 'K', 'L'],
+            ['E', 'R', 'H', 'O', 'O', 'T']
+        ],
+        "target_words": {"LAUGH", "CHORTLE", "GUFFAW", "ROAR", "TITTER", "CHUCKLE", "HOOT"},
+        "hint_words": {"HILARIOUS"}
+}
+
 
 
 }
