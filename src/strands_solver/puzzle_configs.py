@@ -125,5 +125,62 @@ PUZZLE_CONFIGS = {
         ],
         "target_words": {"FILTER", "LENS", "CAMERA", "FLASH", "TRIPOD", "TIMER", "LIGHT"},
         "hint_words": {"PHOTOGRAPHY"}
+    },
+    
+    "This'll all blow over": {
+        "grid": [
+            ['A', 'P', 'L', 'E', 'T', 'N'],
+            ['P', 'B', 'B', 'U', 'H', 'O'],
+            ['E', 'T', 'B', 'E', 'G', 'O'],
+            ['R', 'A', 'H', 'R', 'I', 'L'],
+            ['F', 'E', 'W', 'W', 'E', 'L'],
+            ['R', 'A', 'H', 'T', 'A', 'E'],
+            ['T', 'I', 'G', 'A', 'B', 'Y'],
+            ['S', 'L', 'H', 'S', 'L', 'E']
+        ],
+        "target_words": {"FEATHER", "BUBBLE", "BALLOON", "EYELASH", "STRAW", "PAPER"},
+        "hint_words": {"LIGHTWEIGHT"}
+},
+"You can say that again!": {
+        "grid": [
+            ['O', 'M', 'R', 'T', 'U', 'T'],
+            ['M', 'P', 'E', 'P', 'U', 'C'],
+            ['P', 'R', 'U', 'E', 'C', 'O'],
+            ['G', 'U', 'R', 'T', 'I', 'U'],
+            ['G', 'O', 'A', 'I', 'N', 'C'],
+            ['O', 'M', 'O', 'S', 'A', 'C'],
+            ['A', 'M', 'N', 'C', 'N', 'A']
+        ],
+        "target_words": {"MURMUR", "COUSCOUS", "TUTU", "CANCAN", "POMPOM", "MAMA", "GOGO"},
+        "hint_words": {"REPETITION"}
+    },
+    "Join the club!": {
+        "grid": [
+            ['E', 'U', 'T', 'T', 'E', 'L'],
+            ['C', 'N', 'O', 'R', 'K', 'E'],
+            ['B', 'C', 'K', 'L', 'U', 'Y'],
+            ['S', 'A', 'C', 'E', 'T', 'H'],
+            ['M', 'A', 'I', 'P', 'C', 'T'],
+            ['A', 'N', 'D', 'W', 'I', 'O'],
+            ['Y', 'N', 'N', 'S', 'M', 'A'],
+            ['O', 'A', 'I', 'E', 'T', 'O']
+        ],
+        "target_words": {"TURKEY", "LETTUCE", "TOMATO", "MAYONNAISE", "BACON", "PICKLE"},
+        "hint_words": {"SANDWICH"}
+    },
+     "On the grid": {
+        "grid": [
+            ['T', 'A', 'W', 'N', 'R', 'E'],
+            ['E', 'R', 'H', 'T', 'E', 'T'],
+            ['A', 'S', 'T', 'E', 'I', 'N'],
+            ['S', 'A', 'T', 'L', 'B', 'T'],
+            ['E', 'I', 'I', 'L', 'T', 'E'],
+            ['L', 'H', 'P', 'C', 'I', 'R']
+        ],
+        "target_words": {"ELECTRIC", "WATER", "HEAT", "INTERNET", "CABLE", "TELEPHONE"},
+        "hint_words": {"UTILITIES"}
     }
+
+
+
 }
