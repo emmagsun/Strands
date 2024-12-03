@@ -111,7 +111,7 @@ PUZZLE_CONFIGS = {
             "HOMOPHONES"
         }
     },
-
+    #Sydney
     "Picture this": {
         "grid": [
             ['A', 'T', 'R', 'I', 'O', 'D'],
@@ -179,7 +179,150 @@ PUZZLE_CONFIGS = {
         ],
         "target_words": {"ELECTRIC", "WATER", "HEAT", "INTERNET", "CABLE", "TELEPHONE"},
         "hint_words": {"UTILITIES"}
-    }
+    },
+    "The long run": {
+    "grid": [
+        ['M', 'A', 'A', 'R', 'O', 'N'],
+        ['R', 'C', 'T', 'N', 'U', 'I'],
+        ['S', 'A', 'K', 'T', 'I', 'T'],
+        ['E', 'P', 'T', 'R', 'O', 'N'],
+        ['C', 'P', 'E', 'H', 'T', 'R'],
+        ['T', 'A', 'D', 'E', 'C', 'A'],
+        ['I', 'S', 'E', 'O', 'R', 'I'],
+        ['A', 'G', 'R', 'U', 'E', 'N']
+    ],
+    "target_words": {"NUTRITION", "TRACK", "COURSE", "PACE", "TRAINER", "GAIT", "SPEED"},
+    "hint_words": {"MARATHON"}
+},
+"Sew what?": {
+    "grid": [
+        ['M', 'O', 'T', 'H', 'R', 'E'],
+        ['A', 'E', 'S', 'L', 'I', 'D'],
+        ['S', 'N', 'O', 'D', 'L', 'E'],
+        ['G', 'L', 'N', 'E', 'S', 'H'],
+        ['C', 'H', 'E', 'T', 'T', 'C'],
+        ['P', 'T', 'M', 'I', 'E', 'T'],
+        ['T', 'A', 'H', 'I', 'B', 'L']
+    ],
+    "target_words": {"STITCH", "SEAM", "THREAD", "NEEDLE", "THIMBLE", "CLOTH", "PATCH"},
+    "hint_words": {"TAILORING"}
+},
+"Walk this way": {
+    "grid": [
+        ['T', 'R', 'U', 'T', 'A', 'M'],
+        ['S', 'E', 'D', 'E', 'H', 'R'],
+        ['P', 'R', 'O', 'S', 'B', 'C'],
+        ['S', 'T', 'L', 'T', 'L', 'M'],
+        ['U', 'N', 'L', 'R', 'E', 'A'],
+        ['A', 'S', 'T', 'R', 'E', 'I'],
+        ['T', 'K', 'E', 'U', 'R', 'T'],
+        ['R', 'E', 'R', 'D', 'G', 'E']
+    ],
+    "target_words": {"SAUNTER", "TRUDGE", "STRUT", "AMBLE", "MARCH", "STROLL", "TREK"},
+    "hint_words": {"PEDESTRIAN"}
+},
+"That's life!": {
+    "grid": [
+        ['A', 'W', 'L', 'S', 'K', 'D'],
+        ['R', 'N', 'P', 'E', 'A', 'R'],
+        ['C', 'E', 'O', 'T', 'I', 'V'],
+        ['S', 'G', 'A', 'D', 'S', 'E'],
+        ['O', 'R', 'T', 'A', 'U', 'E'],
+        ['T', 'V', 'E', 'Y', 'L', 'R'],
+        ['M', 'E', 'R', 'I', 'R', 'E'],
+        ['A', 'R', 'M', 'E', 'I', 'T']
+    ],
+    "target_words": {"CRAWL", "SPEAK", "DRIVE", "GRADUATE", "VOTE", "MARRY", "RETIRE"},
+    "hint_words": {"MILESTONES"}
+},
+"Character class": {
+    "grid": [
+        ['E', 'R', 'A', 'T', 'H', 'G'],
+        ['G', 'D', 'M', 'B', 'N', 'I'],
+        ['F', 'A', 'O', 'G', 'U', 'K'],
+        ['S', 'A', 'R', 'A', 'S', 'E'],
+        ['O', 'N', 'T', 'N', 'T', 'Y'],
+        ['R', 'R', 'C', 'U', 'R', 'E'],
+        ['E', 'R', 'E', 'H', 'N', 'I'],
+        ['A', 'S', 'S', 'A', 'S', 'S']
+    ],
+    "target_words": {"HUNTER", "MAGE", "KNIGHT", "ASSASSIN", "ROGUE", "BARD", "SORCERER"},
+    "hint_words": {"FANTASY"}
+},
+
+"The long run": {
+    "grid": [
+        ['M', 'A', 'A', 'R', 'O', 'N'],
+        ['R', 'C', 'T', 'N', 'U', 'I'],
+        ['S', 'A', 'K', 'T', 'I', 'T'],
+        ['E', 'P', 'T', 'R', 'O', 'N'],
+        ['C', 'P', 'E', 'H', 'T', 'R'],
+        ['T', 'A', 'D', 'E', 'C', 'A'],
+        ['I', 'S', 'E', 'O', 'R', 'I'],
+        ['A', 'G', 'R', 'U', 'E', 'N']
+    ],
+    "target_words": {"NUTRITION", "TRACK", "COURSE", "PACE", "TRAINER", "GAIT", "SPEED"},
+    "hint_words": {"MARATHON"}
+},
+
+"This is a puzzle": {
+    "grid": [
+        ['M', 'A', 'S', 'E', 'L', 'D'],
+        ['G', 'E', 'Q', 'A', 'R', 'D'],
+        ['I', 'R', 'U', 'A', 'E', 'I'],
+        ['N', 'Y', 'S', 'N', 'N', 'T'],
+        ['E', 'R', 'D', 'I', 'U', 'R'],
+        ['M', 'A', 'T', 'A', 'M', 'D'],
+        ['Y', 'S', 'E', 'R', 'N', 'N'],
+        ['Y', 'R', 'B', 'C', 'O', 'U']
+    ],
+    "target_words": {"RIDDLE", "ENIGMA", "MYSTERY", "QUANDARY", "CONUNDRUM"},
+    "hint_words": {"BRAINTEASERS"}
+},
+"That's cap!": {
+    "grid": [
+        ['A', 'N', 'I', 'H', 'E', 'M'],
+        ['E', 'E', 'D', 'W', 'L', 'E'],
+        ['B', 'A', 'C', 'O', 'E', 'T'],
+        ['H', 'E', 'R', 'W', 'A', 'R'],
+        ['E', 'N', 'F', 'N', 'A', 'B'],
+        ['T', 'O', 'N', 'E', 'R', 'E'],
+        ['N', 'R', 'B', 'D', 'O', 'R'],
+        ['A', 'B', 'U', 'T', 'T', 'E']
+    ],
+    "target_words": {"HELMET", "BERET", "BEANIE", "BONNET", "FEDORA", "CROWN", "TURBAN"},
+    "hint_words": {"HEADWEAR"}
+},
+"Coming clean": {
+    "grid": [
+        ['S', 'P', 'O', 'O', 'Z', 'R'],
+        ['G', 'N', 'A', 'H', 'R', 'A'],
+        ['S', 'E', 'M', 'P', 'S', 'O'],
+        ['C', 'H', 'O', 'W', 'O', 'R'],
+        ['N', 'R', 'N', 'P', 'E', 'S'],
+        ['E', 'O', 'I', 'A', 'O', 'A'],
+        ['D', 'I', 'T', 'C', 'H', 'T'],
+        ['W', 'A', 'S', 'H', 'L', 'O']
+    ],
+    "target_words": {"RAZOR", "SHAMPOO", "SPONGE", "SOAP", "CONDITIONER", "WASHCLOTH"},
+    "hint_words": {"SHOWER"}
+},
+"Pour it on": {
+    "grid": [
+        ['A', 'I', 'C', 'R', 'A', 'C'],
+        ['O', 'L', 'I', 'O', 'I', 'H'],
+        ['M', 'U', 'N', 'S', 'R', 'A'],
+        ['D', 'S', 'D', 'T', 'Z', 'A'],
+        ['R', 'A', 'T', 'I', 'M', 'T'],
+        ['C', 'H', 'M', 'Y', 'A', 'Z'],
+        ['T', 'U', 'E', 'O', 'I', 'K'],
+        ['E', 'P', 'N', 'T', 'K', 'K']
+    ],
+    "target_words": {"SRIRACHA", "TZATZIKI", "KETCHUP", "AIOLI", "MUSTARD", "MAYO"},
+    "hint_words": {"CONDIMENT"}
+}
+
+
 
 
 
