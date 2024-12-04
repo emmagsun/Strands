@@ -59,7 +59,7 @@ class StrandsState:
                 # Check if adding this letter forms a valid prefix
                 potential_word = current_word + self.grid[new_row][new_col]
                 # Use trie's prefixes method to check if this could form a word
-                if dictionary.keys(potential_word):  # This returns an iterator of words with this prefix
+                if dictionary.keys(potential_word):
                     neighbors.append((new_row, new_col))
 
         return neighbors
@@ -76,7 +76,6 @@ class StrandsSearch:
 
     def search_iterative(self, grid: List[List[str]], target_words: Set[str],
                          max_iterations: int = 7, max_time: int = 500) -> Set[str]:
-        """Iterative search method"""
         found_words = set()
         excluded_positions = set()
         total_start_time = time.time()
