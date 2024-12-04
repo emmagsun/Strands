@@ -287,32 +287,7 @@ class SemanticHeuristic:
 
             words_scored += 1
 
-        # total_similarity = 0
-        # num_pairs = 0
-
-        # for i, word1 in enumerate(group.words):
-        #     word1_lower = word1.lower()
-        #     # Get vector for first word if it exists
-        #     if word1_lower not in self.word_vectors:
-        #         continue
-        #
-        #     word1_vec = self.word_vectors[word1_lower]
-        #
-        #     # Compare with all other words that come after it
-        #     for word2 in group.words[i + 1:]:
-        #         word2_lower = word2.lower()
-        #         if word2_lower not in self.word_vectors:
-        #             continue
-        #
-        #         word2_vec = self.word_vectors[word2_lower]
-        #         similarity = np.dot(word1_vec, word2_vec)
-        #         total_similarity += similarity
-        #         num_pairs += 1
-
         avg_similarity = total_similarity / words_scored if words_scored > 0 else 0
-        # avg_similarity = total_similarity / num_pairs if num_pairs > 0 else 0
-
-        # Calculate frequency score (average of log frequencies)
         # breakpoint()
         freq_score = sum(self.get_word_frequency_score(word) for word in group.words) / len(group.words)
 
@@ -325,25 +300,6 @@ class SemanticHeuristic:
                 -length_penalty * 0.5 +  # Longer words = higher score
                 freq_score * 0.2  # Less common words = higher score
         )
-
-        # Combine scores with weights
-        # semantic_weight = 1.0
-        # frequency_weight = 0.0
-        # size_weight = 0.0
-        # length_weight = 0.0
-        #
-        # size_penalty = (len(self.target_words) - len(group.words)) * size_weight
-        # length_penalty = sum(len(w) for w in group.words) * length_weight
-        #
-        # # Note: Lower score is better
-        # final_score = (
-        #         -avg_similarity * semantic_weight +  # Negative because higher similarity is better
-        #         avg_frequency_score * frequency_weight +
-        #         size_penalty +
-        #         length_penalty
-        # )
-
-        # return final_score
 
 
 @dataclass
@@ -413,61 +369,7 @@ class StrandsGroupSearch:
             if not (word_info.positions & used_positions)
         ]
 
-    # def find_word_groups(self, grid: List[List[str]], max_time: int = 300) -> List[WordGroup]:
-    #     """Find groups of N words using best-first search guided by semantic similarity"""
-    #     start_time = time.time()
-    #
-    #     def is_timeout():
-    #         return time.time() - start_time > max_time
-    #
-    #     # First, precompute all valid words
-    #     if not self.all_valid_words:
-    #         self.precompute_words(grid)
-    #
-    #     # Initialize search with empty group
-    #     initial_group = WordGroup(words=[], paths=[], used_positions=set())
-    #     queue = [(0, 0, initial_group)]  # (priority, tiebreaker, group)
-    #     seen_words = set()
-    #     counter = 1
-    #
-    #     while queue and not is_timeout():
-    #         _, _, current_group = heapq.heappop(queue)
-    #
-    #         if len(current_group.words) == self.required_word_count:
-    #             if set(current_group.words) == self.target_words:
-    #                 elapsed = time.time() - start_time
-    #                 print(f"\n[{elapsed:.2f}s] Found correct solution!")
-    #                 print(f"Words: {current_group.words}")
-    #                 self.found_groups = [current_group.copy()]
-    #                 return self.found_groups
-    #
-    #             self.found_groups.append(current_group.copy())
-    #             elapsed = time.time() - start_time
-    #             print(f"\n[{elapsed:.2f}s] Found potential group: {current_group.words}")
-    #             continue
-    #
-    #         # Get compatible words from precomputed list
-    #         compatible_words = self.get_compatible_words(current_group.used_positions)
-    #
-    #         # Try adding each compatible word
-    #         for word_info in compatible_words:
-    #             new_group = current_group.copy()
-    #             new_group.add_word(word_info.word, word_info.path)
-    #
-    #             # Check if we've seen this combination
-    #             word_combo = frozenset(new_group.words)
-    #             if word_combo in seen_words:
-    #                 continue
-    #             seen_words.add(word_combo)
-    #
-    #             # Score the new group
-    #             score = self.heuristic.calculate_group_score(new_group)
-    #             new_group.score = score
-    #
-    #             heapq.heappush(queue, (score, counter, new_group))
-    #             counter += 1
-    #
-    #     return self.found_groups
+
     def find_word_groups(self, grid: List[List[str]], max_time: int = 300) -> List[WordGroup]:
         if not self.all_valid_words:
             self.precompute_words(grid)
@@ -502,7 +404,7 @@ class StrandsGroupSearch:
 
             if len(current_group.words) == self.required_word_count:
                 if set(current_group.words) == self.target_words:
-                    print(f"\n[{current_time - start_time:.2f}s] Found correct solution!")
+                    print(f"\n[{current_time - start_time:.2f}s] Found correct solution after {groups_checked} attempts!")
                     print(f"Words: {current_group.words}")
                     return [current_group]
                 continue
