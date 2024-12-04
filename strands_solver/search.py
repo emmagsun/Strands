@@ -74,6 +74,33 @@ class StrandsSearch:
         heuristic_class = HEURISTICS.get(heuristic_type, BasicHeuristic)
         self.heuristic = heuristic_class()
 
+    def search_iterative(self, grid: List[List[str]], target_words: Set[str],
+                         max_iterations: int = 7, max_time: int = 500) -> Set[str]:
+        """Iterative search method"""
+        found_words = set()
+        excluded_positions = set()
+        total_start_time = time.time()
+
+        for iteration in range(max_iterations):
+            print(f"\nIteration {iteration + 1}/{max_iterations}")
+            print(f"Still looking for: {target_words - found_words}")
+
+            if time.time() - total_start_time > max_time:
+                print("\nMaximum total time reached!")
+                break
+
+            all_positions = list(product(range(len(grid)), range(len(grid[0]))))
+            for pos in all_positions:
+                new_words = self.search_from_position(grid, pos, target_words, excluded_positions, timeout=3)
+                found_words.update(new_words)
+                if len(found_words) == len(target_words):
+                    break
+
+            if len(found_words) == len(target_words):
+                break
+
+        return found_words
+
     def is_valid_word(self, word: str) -> bool:
         return len(word) >= self.min_word_length and word in self.dictionary
 
