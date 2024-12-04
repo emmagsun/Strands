@@ -29,7 +29,6 @@ PUZZLE_CONFIGS = {
         "target_words": {"TAXONOMY", "CLASS", "DOMAIN", "FAMILY", "GENUS", "ORDER", "PHYLUM", "SPECIES"},
         "hint_words": {"TAXONOMY", "PHYLUM", "GENUS"}
     },
-
     "Strategy game" : {
         "grid": [
             ['O', 'O', 'C', 'K', 'H', 'T'],
@@ -363,12 +362,4 @@ PUZZLE_CONFIGS = {
     "target_words": {"BUTTER", "SALT", "SYRUP", "PECAN", "FLOUR", "VANILLA", "SUGAR"},
     "hint_words": {"INGREDIENTS"}
 }
-
-
-
-
-
-
-
-
 }

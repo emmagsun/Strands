@@ -6,7 +6,7 @@ import nltk
 import time
 from itertools import product
 import marisa_trie
-from src.strands_solver.puzzle_configs import PUZZLE_CONFIGS
+from strands_solver.puzzle_configs import PUZZLE_CONFIGS
 
 def load_dictionary() -> Set[str]:
     """Load dictionary using WordNet"""
@@ -175,13 +175,17 @@ def main():
         print(f"- {puzzle_name}")
 
     # You can either solve specific puzzles or all of them
-    puzzles_to_solve = ["Strategy game"]  # Modify this list to solve specific puzzles
-    # puzzles_to_solve = PUZZLE_CONFIGS.keys()  # Uncomment to solve all puzzles
+    #puzzles_to_solve = ["Strategy game"]  # Modify this list to solve specific puzzles
+    puzzles_to_solve = PUZZLE_CONFIGS.keys()  # Uncomment to solve all puzzles
 
     total_start_time = time.time()
     for puzzle_name in puzzles_to_solve:
+        start_time = time.time()
         try:
             solve_puzzle(puzzle_name, dictionary)
+            finish_time = time.time()
+            with open('timing.csv','a') as fd:
+                fd.write(str(finish_time - start_time) + '\n')
         except Exception as e:
             print(f"\nError solving puzzle '{puzzle_name}': {str(e)}")
 
@@ -270,18 +274,28 @@ def main():
     print(f"Loaded {len(dictionary)} words from WordNet")
 
     # Show available puzzles
+    puzzles = list(PUZZLE_CONFIGS.keys())
     print("\nAvailable puzzles:")
     for puzzle_name in PUZZLE_CONFIGS:
         print(f"- {puzzle_name}")
+        puzzles.append(puzzle_name)
+        print(puzzles)
+    #print(PUZZLE_CONFIGS)
+    print('here are my puzzles!!!', puzzles)
 
     # You can either solve specific puzzles or all of them
     puzzles_to_solve = ["Strategy game"]  # Modify this list to solve specific puzzles
     # puzzles_to_solve = PUZZLE_CONFIGS.keys()  # Uncomment to solve all puzzles
 
     total_start_time = time.time()
-    for puzzle_name in puzzles_to_solve:
+    for puzzle_name in puzzles:
+        #print('this is my puzzle name!')
+        start_time = time.time()
         try:
             solve_puzzle(puzzle_name, dictionary)
+            finish_time = time.time()
+            with open('timing.csv', 'a') as fd:
+                fd.write(str(finish_time - start_time) + '\n')
         except Exception as e:
             print(f"\nError solving puzzle '{puzzle_name}': {str(e)}")
 
