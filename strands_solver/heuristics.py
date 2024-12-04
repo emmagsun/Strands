@@ -23,7 +23,7 @@ class BasicHeuristic(BaseHeuristic):
     """Your current heuristic implementation"""
     def calculate(self, word: str, dictionary: Set[str], found_words: Set[str] = None) -> float:
         # Aggressive pruning for longer paths
-        if len(word) > 8:  # Adjust this number based on typical Strands word length
+        if len(word) > 10:  # Adjust this number based on typical Strands word length
             return float('inf')
 
         # Count how many dictionary words start with this prefix
